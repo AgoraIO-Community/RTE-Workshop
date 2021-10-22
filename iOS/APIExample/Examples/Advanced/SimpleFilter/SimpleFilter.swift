@@ -95,6 +95,22 @@ class SimpleFilterMain: BaseViewController {
 }
 
 extension SimpleFilterMain: AgoraRteSceneDelegate {
+    //
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, remoteUserDidJoin userInfos: [AgoraRteUserInfo]?) {
+        print("didRemoteUserDidJoin")
+    }
+    // one user --> more streams so subscribe user by streamId
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, remoteStreamesDidAddWith streamInfos: [AgoraRteStreamInfo]?) {
+        //subscribe video/audio stream here
+    }
+    
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, didConnectionStateChanged oldState: AgoraConnectionState, newState state: AgoraConnectionState, changedReason reason: AgoraConnectionChangedReason) {
+        print("didConnectionStateChanged state:\(state.rawValue) reason:\(reason.rawValue)")
+    }
+    
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, didLocalStreamStateChanged streams: AgoraRteStreamInfo?, mediaType: AgoraRteMediaType, steamMediaState oldState: AgoraRteStreamState, newState: AgoraRteStreamState, stateChangedReason reason: AgoraRteStreamStateChangedReason) {
+        print("didLocalStreamStateChanged \(String(describing: streams?.streamId)), audio sentBitrate: \(String(describing: newState))")
+    }
     
 }
 

@@ -8,6 +8,8 @@
 - [插件演示][simpleExtension]
 
 ## 开始
+- Agora SDK 下载
+[点此下载AndroidSDK](https://download.agora.io/sdk/release/Agora_RTE_SDK_for_Android_rel.v3.6.205_18566_full_20211021_1817.zip)
 
 - Agora SDK 集成
 > 将`agora-rte-sdk.jar`放置到`/app/libs/`目录下

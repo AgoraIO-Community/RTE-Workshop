@@ -125,4 +125,20 @@ class BasicAudioMain: BaseViewController {
 
 extension BasicAudioMain: AgoraRteSceneDelegate {
     
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, remoteUserDidJoinWithUserInfos userInfos: [AgoraRteStreamInfo]?) {
+        print("on remoteUserDidJoin")
+    }
+    
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, remoteStreamesDidAddWith streamInfos: [AgoraRteStreamInfo]?) {
+        //subscribe audio stream here
+    }
+    
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, connectionStateDidChange oldState: AgoraConnectionState, newState state: AgoraConnectionState, changedReason reason: AgoraConnectionChangedReason) {
+        print("didConnectionStateChanged state:\(state.rawValue) reason:\(reason.rawValue)")
+    }
+    
+    func agoraRteScene(_ rteScene: AgoraRteSceneProtocol, localStreamStateDidChange streams: AgoraRteStreamInfo?, mediaType: AgoraRteMediaType, steamMediaState oldState: AgoraRteStreamState, newState: AgoraRteStreamState, stateChangedReason reason: AgoraRteStreamStateChangedReason) {
+        print("didLocalStreamStateChanged \(String(describing: streams?.streamId)), audio sentBitrate: \(String(describing: newState))")
+    }
+    
 }
