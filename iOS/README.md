@@ -10,6 +10,7 @@
 > 将所有的xcframework文件copy至APIExample目录下
 > 执行pod install
 > 打开xcworkspace项目文件
+> 更新KeyCenter.swift文件中声网APPID字段
 
 - 第一步 基础音视频通话场景搭建
 > 1. 实现`BasicVideo` 2. 实现`BasicAudio`示例
