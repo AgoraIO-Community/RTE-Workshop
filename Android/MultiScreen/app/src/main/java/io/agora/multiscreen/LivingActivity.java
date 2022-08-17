@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.TextureView;
@@ -27,6 +28,7 @@ import io.agora.rtc2.RtcConnection;
 import io.agora.rtc2.RtcEngine;
 import io.agora.rtc2.RtcEngineConfig;
 import io.agora.rtc2.RtcEngineEx;
+import io.agora.rtc2.ScreenCaptureParameters;
 import io.agora.rtc2.video.VideoCanvas;
 
 public class LivingActivity extends AppCompatActivity {
@@ -175,30 +177,54 @@ public class LivingActivity extends AppCompatActivity {
 
     private void startScreenCapture() {
         // TODO Practise 1：start screen sharing.
-
+        ScreenCaptureParameters parameters = new ScreenCaptureParameters();
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+        parameters.captureVideo = true;
+        parameters.videoCaptureParameters.width = 720;
+        parameters.videoCaptureParameters.height = (int) (720 * 1.0f / metrics.widthPixels * metrics.heightPixels);
+        parameters.videoCaptureParameters.framerate = 15;
+        parameters.captureAudio = false;
+        parameters.audioCaptureParameters.captureSignalVolume = 50;
+        rtcEngine.startScreenCapture(parameters);
     }
 
     private void setupLocalScreenView(TextureView videoView){
         // TODO Practise 2：setup screen sharing preview.
-
+        rtcEngine.setupLocalVideo(new VideoCanvas(videoView, Constants.RENDER_MODE_FIT, Constants.VIDEO_MIRROR_MODE_DISABLED,
+                Constants.VIDEO_SOURCE_SCREEN_PRIMARY, mMainUid));
+        rtcEngine.startPreview(Constants.VideoSourceType.VIDEO_SOURCE_SCREEN_PRIMARY);
     }
 
     private void stopScreenCapture() {
         // TODO Practise 3：stop screen sharing.
-
+        rtcEngine.stopScreenCapture();
     }
 
     private void joinScreenChannel() {
         int screenUid = getScreenUid(mMainUid);
         // TODO Practise 4：join external channel and push screen sharing video source.
         // PS: mScreenConnection = xxx;
-
+        ChannelMediaOptions options = new ChannelMediaOptions();
+        options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER;
+        options.autoSubscribeVideo = false;
+        options.autoSubscribeAudio = false;
+        options.publishScreenCaptureVideo = true;
+        options.publishScreenCaptureAudio = false;
+        mScreenConnection = new RtcConnection();
+        mScreenConnection.channelId = mChannelId;
+        mScreenConnection.localUid = screenUid;
+        rtcEngine.joinChannelEx(getString(R.string.agora_rtc_access_token),
+                mScreenConnection, options, new IRtcEngineEventHandler() {});
     }
 
     private void leaveScreenChannel() {
         // TODO Practise 5：leave external channel.
         // PS: mScreenConnection = null;
-
+        if (mScreenConnection != null) {
+            rtcEngine.leaveChannelEx(mScreenConnection);
+            mScreenConnection = null;
+        }
     }
 
     private int getScreenUid(int uid) {
