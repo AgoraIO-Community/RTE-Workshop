@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">MultiScreen</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="channel_id">ChannelId</string>
+    <string name="join">Join</string>
+    <string name="video">Video</string>
+    <string name="mic">Mic</string>
+    <string name="screen_share">ScreenShare</string>
+    <string name="close">Close</string>
+
+    <string name="launch_tip_01">Welcome to use</string>
+    <string name="launch_tip_02">Agora 4.0.0 SDK</string>
+    <string name="channel_id_hint">Please enter channel id</string>
+</resources>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">多屏幕共享</string>
+    <string name="channel_id">频道名</string>
+    <string name="join">加入</string>
+    <string name="video">视频</string>
+    <string name="mic">麦克风</string>
+    <string name="screen_share">屏幕共享</string>
+    <string name="close">关闭</string>
+
+    <string name="launch_tip_01">欢迎使用</string>
+    <string name="launch_tip_02">声网4.0.0 SDK</string>
+    <string name="channel_id_hint">请输入频道名</string>
+</resources>
