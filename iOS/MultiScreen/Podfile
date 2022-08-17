@@ -1,0 +1,17 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'MultiScreen' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'
+  pod 'Agora-Scene-Utils', '~> 1.0.4'
+
+end
+
+target 'Agora-ScreenShare-Extension' do
+  use_frameworks!
+  pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'
+  
+end
