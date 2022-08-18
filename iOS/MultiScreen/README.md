@@ -1,4 +1,4 @@
-# # MultiScreen
+### MultiScreen
 
 ## 教程说明
 
@@ -8,13 +8,16 @@
 ### 任务列表
 
 - 配置APP ID，使用临时Token(可选)
+- 执行 pod install
+- 初始化 RtcEngine
+- 初始化系统屏幕共享 `RPSystemBroadcastPickerView`
 - 加入主频道并推摄像头视频源，退出主频道
 - 开启/预览/关闭屏幕共享
 - 加入Ex频道并推屏幕共享视频源，退出Ex频道
 
 ### 效果
 
-![image](screen.png)
+![screen.png](d7dfbec810388f5288ef943fe6a970df.png)
 
 ## 快速上手
 
@@ -45,10 +48,6 @@
 
 #### 2. 初始化RtcEngineKit
 
-Practise 1：初始化rtcEngine
-补充[MultiScreenShareController](MultiScreen/MultiScreenShareController.swift)中setupAgoraKit方法的部分代码
-答案：
-
 ```swift
 agoraKit = AgoraRtcEngineKit.sharedEngine(with: rtcEngineConfig, delegate: self)
 agoraKit?.setClientRole(.broadcaster)
@@ -59,66 +58,73 @@ agoraKit?.enableAudio()
 agoraKit?.setDefaultAudioRouteToSpeakerphone(true)
 ```
 
-#### 3. 开启/预览/关闭屏幕共享
+#### 
 
-Practise 2：startScreenCapture.
-补充[MultiScreenShareController](MultiScreen/MultiScreenShareController.swift)中startScreenCapture方法的部分代码
-答案：
+#### 3.初始化系统屏幕共享
 
 ```swift
-let params = AgoraScreenCaptureParameters2()
-params.captureVideo = true
-params.captureAudio = true
-let audioParams = AgoraScreenAudioParameters()
-audioParams.captureSignalVolume = 50
-params.audioParams = audioParams
-let videoParams = AgoraScreenVideoParameters()
-videoParams.frameRate = .fps30
-videoParams.bitrate = AgoraVideoBitrateStandard
-
-agoraKit?.startScreenCapture(params)
+let frame = CGRect(x: 0, y:0, width: 0, height: 0)
+systemBroadcastPicker = RPSystemBroadcastPickerView(frame: frame)
+systemBroadcastPicker?.showsMicrophoneButton = false
+systemBroadcastPicker?.autoresizingMask = [.flexibleTopMargin, .flexibleRightMargin]
+let bundleId = Bundle.main.bundleIdentifier ?? ""
+systemBroadcastPicker?.preferredExtension = "\(bundleId).Agora-ScreenShare-Extension";
 ```
 
-Practise 3：stop screen sharing.
-补充[MultiScreenShareController](MultiScreen/MultiScreenShareController.swift)中stopScreenCapture方法的部分代码
-答案：
+<br/>
 
-```swift
-agoraKit?.stopScreenCapture()
-screenChannelMediaOptions.publishCustomVideoTrack = .of(false)
-agoraKit?.updateChannel(with: screenChannelMediaOptions)
-leaveChannel(uid: UserInfo.userId + screenUid)
-```
+#### 4. 开启/关闭屏幕共享
 
-#### 4. 加入Ex频道并推屏幕共享视频源，退出Ex频道
+1. 开始屏幕共享
+   ```swift
+   let params = AgoraScreenCaptureParameters2()
+   params.captureVideo = true
+   params.captureAudio = true
+   let audioParams = AgoraScreenAudioParameters()
+   audioParams.captureSignalVolume = 50
+   params.audioParams = audioParams
+   let videoParams = AgoraScreenVideoParameters()
+   videoParams.frameRate = .fps30
+   videoParams.bitrate = AgoraVideoBitrateStandard
+   
+   agoraKit?.startScreenCapture(params)
+   ```
 
-Practise 4：join external channel and push screen sharing video source.
-补充[MultiScreenShareController](MultiScreen/MultiScreenShareController.swift)中joinChannel方法的部分代码
-答案：
+2. 停止屏幕共享
+   ```swift
+   agoraKit?.stopScreenCapture()
+   screenChannelMediaOptions.publishCustomVideoTrack = .of(false)
+   agoraKit?.updateChannel(with: screenChannelMediaOptions)
+   leaveChannel(uid: UserInfo.userId + screenUid)
+   ```
 
-```swift
-let connection = AgoraRtcConnection()
-connection.channelId = channelName
-connection.localUid = uid
-let result = agoraKit?.joinChannelEx(byToken: KeyCenter.Token,
-                                     connection: connection,
-                                     delegate: self,
-                                     mediaOptions: mediaOption,
-                                     joinSuccess: nil)
-```
+<br/>
 
-Practise 5：leave external channel.
-补充[MultiScreenShareController](MultiScreen/MultiScreenShareController.swift)中leaveChannel方法的部分代码
-答案：
+#### 5. 加入Ex频道并推屏幕共享视频源，退出Ex频道
 
-```swift
-let connection = AgoraRtcConnection()
-connection.channelId = channelName
-connection.localUid = uid
-agoraKit?.leaveChannelEx(connection, leaveChannelBlock: { state in
-    print("leave channel: \(state)")
-})
-```
+1. 加入频道
+   ```swift
+   let connection = AgoraRtcConnection()
+   connection.channelId = channelName
+   connection.localUid = uid
+   let result = agoraKit?.joinChannelEx(byToken: KeyCenter.Token,
+                                        connection: connection,
+                                        delegate: self,
+                                        mediaOptions: mediaOption,
+                                        joinSuccess: nil)
+   ```
+
+2. 退出频道
+   ```swift
+   let connection = AgoraRtcConnection()
+   connection.channelId = channelName
+   connection.localUid = uid
+   agoraKit?.leaveChannelEx(connection, leaveChannelBlock: { state in
+       print("leave channel: \(state)")
+   })
+   ```
+
+<br/>
 
 ## 参考文档
 
