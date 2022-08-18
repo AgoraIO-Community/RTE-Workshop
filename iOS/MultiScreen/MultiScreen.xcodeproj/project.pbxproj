@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A0E4E7CE76E12176E4008FA1 /* Pods_Agora_ScreenShare_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE19E784F06C83A4E3C4BE24 /* Pods_Agora_ScreenShare_Extension.framework */; };
+		E748778A28A0BA8D00CA2F58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748778928A0BA8D00CA2F58 /* AppDelegate.swift */; };
+		E748778C28A0BA8D00CA2F58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748778B28A0BA8D00CA2F58 /* SceneDelegate.swift */; };
+		E748778E28A0BA8D00CA2F58 /* MultiScreenShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748778D28A0BA8D00CA2F58 /* MultiScreenShareController.swift */; };
+		E748779128A0BA8D00CA2F58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E748778F28A0BA8D00CA2F58 /* Main.storyboard */; };
+		E748779328A0BA8E00CA2F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E748779228A0BA8E00CA2F58 /* Assets.xcassets */; };
+		E748779628A0BA8E00CA2F58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E748779428A0BA8E00CA2F58 /* LaunchScreen.storyboard */; };
+		E748779E28A0BA9A00CA2F58 /* KeyCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748779D28A0BA9A00CA2F58 /* KeyCenter.swift */; };
+		E74877A028A0BADA00CA2F58 /* CanvasContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748779F28A0BADA00CA2F58 /* CanvasContainerView.swift */; };
+		E74877A828A0BC8F00CA2F58 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74877A228A0BC8F00CA2F58 /* Config.swift */; };
+		E74877AB28A0BC8F00CA2F58 /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74877A528A0BC8F00CA2F58 /* Screen.swift */; };
+		E74877AC28A0BC8F00CA2F58 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74877A628A0BC8F00CA2F58 /* JSONObject.swift */; };
+		E74877AF28A10AE500CA2F58 /* ToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74877AE28A10AE500CA2F58 /* ToolView.swift */; };
+		E74877B228A1FCF800CA2F58 /* JoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74877B128A1FCF800CA2F58 /* JoinViewController.swift */; };
+		E748784D28A4D4B100CA2F58 /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74877F228A4AB2100CA2F58 /* ReplayKit.framework */; };
+		E748785028A4D4B100CA2F58 /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E748784F28A4D4B100CA2F58 /* SampleHandler.swift */; };
+		E748785428A4D4B100CA2F58 /* Agora-ScreenShare-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E748784C28A4D4B100CA2F58 /* Agora-ScreenShare-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC6B6060E1EFD6BD1C099B9C /* Pods_MultiScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F21A5FA1B32115B99508925 /* Pods_MultiScreen.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E748785228A4D4B100CA2F58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E748777E28A0BA8D00CA2F58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E748784B28A4D4B100CA2F58;
+			remoteInfo = "Agora-ScreenShare-Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E74877FB28A4AB2100CA2F58 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E748785428A4D4B100CA2F58 /* Agora-ScreenShare-Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0840D6AC727FE8CBDCEB1DF4 /* Pods-Agora-ScreenShare-Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-ScreenShare-Extension.release.xcconfig"; path = "Target Support Files/Pods-Agora-ScreenShare-Extension/Pods-Agora-ScreenShare-Extension.release.xcconfig"; sourceTree = "<group>"; };
+		2F21A5FA1B32115B99508925 /* Pods_MultiScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55959E7C6816904BE871983B /* Pods-MultiScreenExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiScreenExtension.debug.xcconfig"; path = "Target Support Files/Pods-MultiScreenExtension/Pods-MultiScreenExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		5792B2E803DE812D3691381D /* Pods-Agora-ScreenShare-Extension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Agora-ScreenShare-Extension.debug.xcconfig"; path = "Target Support Files/Pods-Agora-ScreenShare-Extension/Pods-Agora-ScreenShare-Extension.debug.xcconfig"; sourceTree = "<group>"; };
+		62D6162834888ABD35326D22 /* Pods-MultiScreenExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiScreenExtension.release.xcconfig"; path = "Target Support Files/Pods-MultiScreenExtension/Pods-MultiScreenExtension.release.xcconfig"; sourceTree = "<group>"; };
+		7C784586BE98151916D13900 /* Pods_MultiScreenExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MultiScreenExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D3C3BCAE5CECCC4EBDB1636 /* Pods-MultiScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiScreen.release.xcconfig"; path = "Target Support Files/Pods-MultiScreen/Pods-MultiScreen.release.xcconfig"; sourceTree = "<group>"; };
+		AE19E784F06C83A4E3C4BE24 /* Pods_Agora_ScreenShare_Extension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Agora_ScreenShare_Extension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E748778628A0BA8D00CA2F58 /* MultiScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E748778928A0BA8D00CA2F58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E748778B28A0BA8D00CA2F58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		E748778D28A0BA8D00CA2F58 /* MultiScreenShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiScreenShareController.swift; sourceTree = "<group>"; };
+		E748779028A0BA8D00CA2F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E748779228A0BA8E00CA2F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E748779528A0BA8E00CA2F58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E748779728A0BA8E00CA2F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E748779D28A0BA9A00CA2F58 /* KeyCenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyCenter.swift; sourceTree = "<group>"; };
+		E748779F28A0BADA00CA2F58 /* CanvasContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasContainerView.swift; sourceTree = "<group>"; };
+		E74877A228A0BC8F00CA2F58 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		E74877A528A0BC8F00CA2F58 /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
+		E74877A628A0BC8F00CA2F58 /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
+		E74877AE28A10AE500CA2F58 /* ToolView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolView.swift; sourceTree = "<group>"; };
+		E74877B128A1FCF800CA2F58 /* JoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinViewController.swift; sourceTree = "<group>"; };
+		E74877F228A4AB2100CA2F58 /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		E748781C28A4B04E00CA2F58 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		E748784C28A4D4B100CA2F58 /* Agora-ScreenShare-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Agora-ScreenShare-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E748784F28A4D4B100CA2F58 /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		E748785128A4D4B100CA2F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E748785828A4D4CC00CA2F58 /* Agora-ScreenShare-Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Agora-ScreenShare-Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		FB7AE5993F608FC03AB064F6 /* Pods-MultiScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MultiScreen.debug.xcconfig"; path = "Target Support Files/Pods-MultiScreen/Pods-MultiScreen.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E748778328A0BA8D00CA2F58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC6B6060E1EFD6BD1C099B9C /* Pods_MultiScreen.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E748784928A4D4B100CA2F58 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E748784D28A4D4B100CA2F58 /* ReplayKit.framework in Frameworks */,
+				A0E4E7CE76E12176E4008FA1 /* Pods_Agora_ScreenShare_Extension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FC6D8FB4D4F90549214B707 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E748781C28A4B04E00CA2F58 /* Accelerate.framework */,
+				2F21A5FA1B32115B99508925 /* Pods_MultiScreen.framework */,
+				E74877F228A4AB2100CA2F58 /* ReplayKit.framework */,
+				7C784586BE98151916D13900 /* Pods_MultiScreenExtension.framework */,
+				AE19E784F06C83A4E3C4BE24 /* Pods_Agora_ScreenShare_Extension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8FBD7B5CE5D8196EBD2C2B47 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FB7AE5993F608FC03AB064F6 /* Pods-MultiScreen.debug.xcconfig */,
+				8D3C3BCAE5CECCC4EBDB1636 /* Pods-MultiScreen.release.xcconfig */,
+				55959E7C6816904BE871983B /* Pods-MultiScreenExtension.debug.xcconfig */,
+				62D6162834888ABD35326D22 /* Pods-MultiScreenExtension.release.xcconfig */,
+				5792B2E803DE812D3691381D /* Pods-Agora-ScreenShare-Extension.debug.xcconfig */,
+				0840D6AC727FE8CBDCEB1DF4 /* Pods-Agora-ScreenShare-Extension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E748777D28A0BA8D00CA2F58 = {
+			isa = PBXGroup;
+			children = (
+				E748778828A0BA8D00CA2F58 /* MultiScreen */,
+				E748784E28A4D4B100CA2F58 /* Agora-ScreenShare-Extension */,
+				E748778728A0BA8D00CA2F58 /* Products */,
+				8FBD7B5CE5D8196EBD2C2B47 /* Pods */,
+				2FC6D8FB4D4F90549214B707 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E748778728A0BA8D00CA2F58 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E748778628A0BA8D00CA2F58 /* MultiScreen.app */,
+				E748784C28A4D4B100CA2F58 /* Agora-ScreenShare-Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E748778828A0BA8D00CA2F58 /* MultiScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E74877B028A1270C00CA2F58 /* Views */,
+				E74877A128A0BC8F00CA2F58 /* Common */,
+				E748779D28A0BA9A00CA2F58 /* KeyCenter.swift */,
+				E748778928A0BA8D00CA2F58 /* AppDelegate.swift */,
+				E748778B28A0BA8D00CA2F58 /* SceneDelegate.swift */,
+				E74877B128A1FCF800CA2F58 /* JoinViewController.swift */,
+				E748778D28A0BA8D00CA2F58 /* MultiScreenShareController.swift */,
+				E748778F28A0BA8D00CA2F58 /* Main.storyboard */,
+				E748779228A0BA8E00CA2F58 /* Assets.xcassets */,
+				E748779428A0BA8E00CA2F58 /* LaunchScreen.storyboard */,
+				E748779728A0BA8E00CA2F58 /* Info.plist */,
+			);
+			path = MultiScreen;
+			sourceTree = "<group>";
+		};
+		E74877A128A0BC8F00CA2F58 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E74877A228A0BC8F00CA2F58 /* Config.swift */,
+				E74877A528A0BC8F00CA2F58 /* Screen.swift */,
+				E74877A628A0BC8F00CA2F58 /* JSONObject.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E74877B028A1270C00CA2F58 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E748779F28A0BADA00CA2F58 /* CanvasContainerView.swift */,
+				E74877AE28A10AE500CA2F58 /* ToolView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E748784E28A4D4B100CA2F58 /* Agora-ScreenShare-Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E748784F28A4D4B100CA2F58 /* SampleHandler.swift */,
+				E748785128A4D4B100CA2F58 /* Info.plist */,
+				E748785828A4D4CC00CA2F58 /* Agora-ScreenShare-Extension-Bridging-Header.h */,
+			);
+			path = "Agora-ScreenShare-Extension";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E748778528A0BA8D00CA2F58 /* MultiScreen */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E748779A28A0BA8E00CA2F58 /* Build configuration list for PBXNativeTarget "MultiScreen" */;
+			buildPhases = (
+				FC0A34BAB8AAB8D888FC59BA /* [CP] Check Pods Manifest.lock */,
+				E748778228A0BA8D00CA2F58 /* Sources */,
+				E748778328A0BA8D00CA2F58 /* Frameworks */,
+				E748778428A0BA8D00CA2F58 /* Resources */,
+				4BD3AFB64B08630B0BC236A6 /* [CP] Embed Pods Frameworks */,
+				E74877FB28A4AB2100CA2F58 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E748785328A4D4B100CA2F58 /* PBXTargetDependency */,
+			);
+			name = MultiScreen;
+			productName = MultiScreen;
+			productReference = E748778628A0BA8D00CA2F58 /* MultiScreen.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E748784B28A4D4B100CA2F58 /* Agora-ScreenShare-Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E748785528A4D4B100CA2F58 /* Build configuration list for PBXNativeTarget "Agora-ScreenShare-Extension" */;
+			buildPhases = (
+				082E482FB6C491DAE0B530A9 /* [CP] Check Pods Manifest.lock */,
+				E748784828A4D4B100CA2F58 /* Sources */,
+				E748784928A4D4B100CA2F58 /* Frameworks */,
+				E748784A28A4D4B100CA2F58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Agora-ScreenShare-Extension";
+			productName = "Agora-ScreenShare-Extension";
+			productReference = E748784C28A4D4B100CA2F58 /* Agora-ScreenShare-Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E748777E28A0BA8D00CA2F58 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					E748778528A0BA8D00CA2F58 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					E748784B28A4D4B100CA2F58 = {
+						CreatedOnToolsVersion = 13.2.1;
+						LastSwiftMigration = 1320;
+					};
+				};
+			};
+			buildConfigurationList = E748778128A0BA8D00CA2F58 /* Build configuration list for PBXProject "MultiScreen" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E748777D28A0BA8D00CA2F58;
+			productRefGroup = E748778728A0BA8D00CA2F58 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E748778528A0BA8D00CA2F58 /* MultiScreen */,
+				E748784B28A4D4B100CA2F58 /* Agora-ScreenShare-Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E748778428A0BA8D00CA2F58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E748779628A0BA8E00CA2F58 /* LaunchScreen.storyboard in Resources */,
+				E748779328A0BA8E00CA2F58 /* Assets.xcassets in Resources */,
+				E748779128A0BA8D00CA2F58 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E748784A28A4D4B100CA2F58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		082E482FB6C491DAE0B530A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Agora-ScreenShare-Extension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BD3AFB64B08630B0BC236A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiScreen/Pods-MultiScreen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MultiScreen/Pods-MultiScreen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MultiScreen/Pods-MultiScreen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC0A34BAB8AAB8D888FC59BA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MultiScreen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E748778228A0BA8D00CA2F58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E748779E28A0BA9A00CA2F58 /* KeyCenter.swift in Sources */,
+				E74877AF28A10AE500CA2F58 /* ToolView.swift in Sources */,
+				E74877A028A0BADA00CA2F58 /* CanvasContainerView.swift in Sources */,
+				E748778E28A0BA8D00CA2F58 /* MultiScreenShareController.swift in Sources */,
+				E74877AC28A0BC8F00CA2F58 /* JSONObject.swift in Sources */,
+				E748778A28A0BA8D00CA2F58 /* AppDelegate.swift in Sources */,
+				E74877AB28A0BC8F00CA2F58 /* Screen.swift in Sources */,
+				E748778C28A0BA8D00CA2F58 /* SceneDelegate.swift in Sources */,
+				E74877B228A1FCF800CA2F58 /* JoinViewController.swift in Sources */,
+				E74877A828A0BC8F00CA2F58 /* Config.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E748784828A4D4B100CA2F58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E748785028A4D4B100CA2F58 /* SampleHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E748785328A4D4B100CA2F58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E748784B28A4D4B100CA2F58 /* Agora-ScreenShare-Extension */;
+			targetProxy = E748785228A4D4B100CA2F58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E748778F28A0BA8D00CA2F58 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E748779028A0BA8D00CA2F58 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E748779428A0BA8E00CA2F58 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E748779528A0BA8E00CA2F58 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E748779828A0BA8E00CA2F58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E748779928A0BA8E00CA2F58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E748779B28A0BA8E00CA2F58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB7AE5993F608FC03AB064F6 /* Pods-MultiScreen.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YS397FG5PA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultiScreen/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "相机权限";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "麦克风权限";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.multiscreen.MultiScreen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E748779C28A0BA8E00CA2F58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D3C3BCAE5CECCC4EBDB1636 /* Pods-MultiScreen.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YS397FG5PA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultiScreen/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "相机权限";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "麦克风权限";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = io.agora.multiscreen.MultiScreen;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		E748785628A4D4B100CA2F58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5792B2E803DE812D3691381D /* Pods-Agora-ScreenShare-Extension.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YS397FG5PA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Agora-ScreenShare-Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Agora-ScreenShare-Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.multiscreen.MultiScreen.Agora-ScreenShare-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Agora-ScreenShare-Extension/Agora-ScreenShare-Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E748785728A4D4B100CA2F58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0840D6AC727FE8CBDCEB1DF4 /* Pods-Agora-ScreenShare-Extension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YS397FG5PA;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Agora-ScreenShare-Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Agora-ScreenShare-Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.multiscreen.MultiScreen.Agora-ScreenShare-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Agora-ScreenShare-Extension/Agora-ScreenShare-Extension-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E748778128A0BA8D00CA2F58 /* Build configuration list for PBXProject "MultiScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E748779828A0BA8E00CA2F58 /* Debug */,
+				E748779928A0BA8E00CA2F58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E748779A28A0BA8E00CA2F58 /* Build configuration list for PBXNativeTarget "MultiScreen" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E748779B28A0BA8E00CA2F58 /* Debug */,
+				E748779C28A0BA8E00CA2F58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E748785528A4D4B100CA2F58 /* Build configuration list for PBXNativeTarget "Agora-ScreenShare-Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E748785628A4D4B100CA2F58 /* Debug */,
+				E748785728A4D4B100CA2F58 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E748777E28A0BA8D00CA2F58 /* Project object */;
+}
