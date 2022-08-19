@@ -158,19 +158,13 @@ public class LivingActivity extends AppCompatActivity {
     }
 
     private void joinMainChannel() {
-        ChannelMediaOptions options = new ChannelMediaOptions();
-        options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER;
-        options.autoSubscribeVideo = true;
-        options.autoSubscribeAudio = true;
-        options.publishCameraTrack = true;
-        options.publishMicrophoneTrack = true;
-        mMainChannelOptions = options;
-        rtcEngine.joinChannel(getString(R.string.agora_rtc_access_token),
-                mChannelId, mMainUid, options);
+        // TODO Practise 0: join main channel and push camera video.
+
     }
 
     private void leaveMainChannel() {
-        rtcEngine.leaveChannel();
+        // TODO Practise 0.1：leave main channel.
+
     }
 
     private void startScreenCapture() {

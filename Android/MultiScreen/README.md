@@ -34,14 +34,40 @@
 ```
 **PS：没有临时Token，agora_rtc_token留空。如果开启了临时Token，在加入频道时要使用申请临时Token时使用的ChannelId**
 
+#### 3. 加入主频道并推摄像头视频源，退出主频道
+Practise 0：join main channel and push camera video.
+补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中joinMainChannel方法的部分代码
+
+答案：
+```java
+ChannelMediaOptions options = new ChannelMediaOptions();
+options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER;
+options.autoSubscribeVideo = true;
+options.autoSubscribeAudio = true;
+options.publishCameraTrack = true;
+options.publishMicrophoneTrack = true;
+mMainChannelOptions = options;
+rtcEngine.joinChannel(getString(R.string.agora_rtc_access_token),
+mChannelId, mMainUid, options);
+```
+
+Practise 0.1：leave main channel.
+补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中joinMainChannel方法的部分代码
+
+答案：
+```java
+rtcEngine.leaveChannel();
+```
+
 #### 2. 开启/预览/关闭屏幕共享
 Practise 1：start screen sharing.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码
+
 答案：
 ```java
 ScreenCaptureParameters parameters = new ScreenCaptureParameters();
 DisplayMetrics metrics = new DisplayMetrics();
-getWindowManager().getDefaultDisplay().getMetrics(metrics);
+getWindowManager().getDefaultDisplay().getRealMetrics(metrics);
 parameters.captureVideo = true;
 parameters.videoCaptureParameters.width = 720;
 parameters.videoCaptureParameters.height = (int) (720 * 1.0f / metrics.widthPixels * metrics.heightPixels);
@@ -53,6 +79,7 @@ rtcEngine.startScreenCapture(parameters);
 
 Practise 2：setup screen sharing preview.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中upLocalSeat方法的部分代码
+
 答案：
 ```java
 rtcEngine.setupLocalVideo(new VideoCanvas(renderView, Constants.RENDER_MODE_FIT, Constants.VIDEO_MIRROR_MODE_DISABLED,
@@ -62,6 +89,7 @@ rtcEngine.setupLocalVideo(new VideoCanvas(renderView, Constants.RENDER_MODE_FIT,
 
 Practise 3：stop screen sharing.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码
+
 答案：
 ```java
 rtcEngine.stopScreenCapture();
@@ -71,6 +99,7 @@ rtcEngine.stopScreenCapture();
 #### 3. 加入Ex频道并推屏幕共享视频源，退出Ex频道
 Practise 4：join external channel and push screen sharing video source.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码，并给mScreenConnection全局变量赋值
+
 答案：
 ```java
 ChannelMediaOptions options = new ChannelMediaOptions();
@@ -88,6 +117,7 @@ rtcEngine.joinChannelEx(getString(R.string.agora_rtc_token),
 
 Practise 5：leave external channel.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中leaveScreenChannel方法的部分代码
+
 答案：
 ```java
 if (mScreenConnection != null) {
