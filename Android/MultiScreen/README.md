@@ -2,6 +2,7 @@
 
 ## 教程说明
 了解最新屏幕共享API，学会同时共享多屏幕来减少开会中来回切换屏幕的烦恼。
+
 **RTC版本：4.0.0-rc.1**
 
 ### 任务列表
@@ -34,7 +35,7 @@
 ```
 **PS：没有临时Token，agora_rtc_token留空。如果开启了临时Token，在加入频道时要使用申请临时Token时使用的ChannelId**
 
-#### 3. 加入主频道并推摄像头视频源，退出主频道
+#### 2. 加入主频道并推摄像头视频源，退出主频道
 Practise 0：join main channel and push camera video.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中joinMainChannel方法的部分代码
 
@@ -59,7 +60,7 @@ Practise 0.1：leave main channel.
 rtcEngine.leaveChannel();
 ```
 
-#### 2. 开启/预览/关闭屏幕共享
+#### 3. 开启/预览/关闭屏幕共享
 Practise 1：start screen sharing.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码
 
@@ -96,7 +97,7 @@ rtcEngine.stopScreenCapture();
 ```
 
 
-#### 3. 加入Ex频道并推屏幕共享视频源，退出Ex频道
+#### 4. 加入Ex频道并推屏幕共享视频源，退出Ex频道
 Practise 4：join external channel and push screen sharing video source.
 补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码，并给mScreenConnection全局变量赋值
 
