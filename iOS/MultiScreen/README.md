@@ -1,4 +1,4 @@
-### MultiScreen
+# ### MultiScreen
 
 ## 教程说明
 
@@ -8,6 +8,7 @@
 ### 任务列表
 
 - 配置APP ID，使用临时Token(可选)
+- 配置第三方库 导入 `pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'`
 - 执行 pod install
 - 初始化 RtcEngine
 - 初始化系统屏幕共享 `RPSystemBroadcastPickerView`
@@ -42,6 +43,14 @@
 
  // assign token to nil if you have not enabled app certificate
  static var Token: String? = <#YOUR TOKEN#>
+```
+
+编辑 `Podfile`文件加入
+
+```swift
+  pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'
+
+  pod 'Agora-Scene-Utils', '~> 1.0.6'
 ```
 
 <br/>
@@ -89,7 +98,6 @@ systemBroadcastPicker?.preferredExtension = "\(bundleId).Agora-ScreenShare-Exten
    
    agoraKit?.startScreenCapture(params)
    ```
-
 2. 停止屏幕共享
    ```swift
    agoraKit?.stopScreenCapture()
@@ -113,7 +121,6 @@ systemBroadcastPicker?.preferredExtension = "\(bundleId).Agora-ScreenShare-Exten
                                         mediaOptions: mediaOption,
                                         joinSuccess: nil)
    ```
-
 2. 退出频道
    ```swift
    let connection = AgoraRtcConnection()
