@@ -52,7 +52,7 @@ mChannelId, mMainUid, options);
 ```
 
 Practise 0.1：leave main channel.
-补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中joinMainChannel方法的部分代码
+补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中leaveMainChannel方法的部分代码
 
 答案：
 ```java
