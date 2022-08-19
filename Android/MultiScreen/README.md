@@ -32,6 +32,17 @@
 
 ### 实现步骤
 
+#### 0. 添加rtc依赖(maven)
+在[app/build.gradle](app/build.gradle)里配置
+```
+dependencies {
+    def agora_sdk_version = "4.0.0-rc.1"
+    implementation "io.agora.rtc:full-sdk:${agora_sdk_version}"
+    implementation "io.agora.rtc:full-screen-sharing:${agora_sdk_version}"
+}
+```
+**PS：也可以手动下载sdk，把jar/aar包放app/libs下，把带cpu类型的so文件夹放app/src/main/jniLibs下。注意手动集成和maven集成只能二选一，不然编译会报类冲突。**
+
 #### 1 配置appId、临时Token(可选)
 在[app/src/main/res/values/strings_config.xml](app/src/main/res/values/strings_config.xml)下配置
 ```
@@ -39,6 +50,7 @@
 <string name="agora_rtc_token"><=Your ACCESS TOKEN=></string>
 ```
 **PS：没有临时Token，agora_rtc_token留空。如果开启了临时Token，在加入频道时要使用申请临时Token时使用的ChannelId**
+
 
 #### 2 初始化 RtcEngine
 ```java
