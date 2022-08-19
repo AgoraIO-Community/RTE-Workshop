@@ -2,13 +2,16 @@
 
 ## 教程说明
 了解最新屏幕共享API，学会同时共享多屏幕来减少开会中来回切换屏幕的烦恼。
+
 **RTC版本：4.0.0-rc.1**
 
 ### 任务列表
 - 配置APP ID，使用临时Token(可选)
+- 初始化 RtcEngine
 - 加入主频道并推摄像头视频源，退出主频道
 - 开启/预览/关闭屏幕共享
 - 加入Ex频道并推屏幕共享视频源，退出Ex频道
+- 销毁 RtcEngine
 
 ### 效果
 
@@ -26,7 +29,7 @@
 
 ### 实现步骤
 
-#### 1. 配置appId、临时Token(可选)
+#### 1 配置appId、临时Token(可选)
 在[app/src/main/res/values/strings_config.xml](app/src/main/res/values/strings_config.xml)下配置
 ```
 <string name="agora_rtc_app_id"><=YOUR APP ID=></string>
@@ -34,14 +37,30 @@
 ```
 **PS：没有临时Token，agora_rtc_token留空。如果开启了临时Token，在加入频道时要使用申请临时Token时使用的ChannelId**
 
-#### 2. 开启/预览/关闭屏幕共享
-Practise 1：start screen sharing.
-补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码
-答案：
+#### 2 初始化 RtcEngine
+```java
+RtcEngineConfig config = new RtcEngineConfig();
+config.mContext = getApplicationContext();
+config.mAppId = getString(R.string.agora_rtc_app_id);
+config.mEventHandler = mMainEventHandler;
+config.mAreaCode = RtcEngineConfig.AreaCode.AREA_CODE_GLOB;
+config.mChannelProfile = Constants.CHANNEL_PROFILE_LIVE_BROADCASTING;
+try {
+    rtcEngine = (RtcEngineEx) RtcEngine.create(config);
+    rtcEngine.enableVideo();
+    rtcEngine.enableAudio();
+    rtcEngine.setDefaultAudioRoutetoSpeakerphone(true);
+} catch (Exception e) {
+    e.printStackTrace();
+}
+```
+
+#### 3 开启/预览/关闭屏幕共享
+##### 3.1 开启屏幕共享
 ```java
 ScreenCaptureParameters parameters = new ScreenCaptureParameters();
 DisplayMetrics metrics = new DisplayMetrics();
-getWindowManager().getDefaultDisplay().getMetrics(metrics);
+getWindowManager().getDefaultDisplay().getRealMetrics(metrics);
 parameters.captureVideo = true;
 parameters.videoCaptureParameters.width = 720;
 parameters.videoCaptureParameters.height = (int) (720 * 1.0f / metrics.widthPixels * metrics.heightPixels);
@@ -51,27 +70,21 @@ parameters.audioCaptureParameters.captureSignalVolume = 50;
 rtcEngine.startScreenCapture(parameters);
 ```
 
-Practise 2：setup screen sharing preview.
-补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中upLocalSeat方法的部分代码
-答案：
+##### 3.2 预览屏幕共享
 ```java
 rtcEngine.setupLocalVideo(new VideoCanvas(renderView, Constants.RENDER_MODE_FIT, Constants.VIDEO_MIRROR_MODE_DISABLED,
                     Constants.VIDEO_SOURCE_SCREEN_PRIMARY, uid));
            rtcEngine.startPreview(Constants.VideoSourceType.VIDEO_SOURCE_SCREEN_PRIMARY);
 ```
 
-Practise 3：stop screen sharing.
-补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码
-答案：
+##### 3.3 关闭屏幕共享
 ```java
 rtcEngine.stopScreenCapture();
 ```
 
 
-#### 3. 加入Ex频道并推屏幕共享视频源，退出Ex频道
-Practise 4：join external channel and push screen sharing video source.
-补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中startScreenCapture方法的部分代码，并给mScreenConnection全局变量赋值
-答案：
+#### 4 加入Ex频道并推屏幕共享视频源，退出Ex频道
+##### 4.1 加入Ex频道并推屏幕共享视频
 ```java
 ChannelMediaOptions options = new ChannelMediaOptions();
 options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER;
@@ -86,14 +99,16 @@ rtcEngine.joinChannelEx(getString(R.string.agora_rtc_token),
 			mScreenConnection, options, new IRtcEngineEventHandler() {});
 ```
 
-Practise 5：leave external channel.
-补充[LivingActivity](app/src/mainjava/io/agora/multiscreen/LivingActivity.java)中leaveScreenChannel方法的部分代码
-答案：
+##### 4.2 退出Ex频道
 ```java
 if (mScreenConnection != null) {
     rtcEngine.leaveChannelEx(mScreenConnection);
     mScreenConnection = null;
 }
+```
+#### 5 销毁 RtcEngine
+```java
+RtcEngine.destroy();
 ```
 
 ## 参考文档
