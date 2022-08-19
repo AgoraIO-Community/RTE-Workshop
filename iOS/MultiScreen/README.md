@@ -1,4 +1,4 @@
-# # MultiScreen
+## MultiScreen
 
 ## 教程说明
 
@@ -8,13 +8,14 @@
 ### 任务列表
 
 - 配置APP ID，使用临时Token(可选)
+- 配置第三方库 导入 `pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'`
 - 加入主频道并推摄像头视频源，退出主频道
 - 开启/预览/关闭屏幕共享
 - 加入Ex频道并推屏幕共享视频源，退出Ex频道
 
 ### 效果
 
-![image](./screen.png)
+![screen.png](screen.png)
 
 ## 快速上手
 
@@ -39,6 +40,14 @@
 
  // assign token to nil if you have not enabled app certificate
  static var Token: String? = <#YOUR TOKEN#>
+```
+
+编辑 `Podfile`文件加入
+
+```swift
+  pod 'AgoraRtcEngine_iOS', '4.0.0-rc.1'
+
+  pod 'Agora-Scene-Utils', '~> 1.0.6'
 ```
 
 <br/>
