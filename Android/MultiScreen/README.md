@@ -8,9 +8,12 @@
 ### 任务列表
 - 配置APP ID，使用临时Token(可选)
 - 初始化 RtcEngine
+- 开启/预览摄像头
 - 加入主频道并推摄像头视频源，退出主频道
 - 开启/预览/关闭屏幕共享
 - 加入Ex频道并推屏幕共享视频源，退出Ex频道
+- 本地视频开启/关闭控制
+- 本地音频开启/关闭控制
 - 销毁 RtcEngine
 
 ### 效果
@@ -55,8 +58,18 @@ try {
 }
 ```
 
-#### 3 开启/预览/关闭屏幕共享
-##### 3.1 开启屏幕共享
+#### 3 开启/预览摄像头
+```java
+rtcEngine.setupLocalVideo(new VideoCanvas(renderView, 									
+								Constants.RENDER_MODE_HIDDEN, 
+								Constants.VIDEO_MIRROR_MODE_AUTO,
+                Constants.VIDEO_SOURCE_CAMERA_PRIMARY, 
+                seatUid));
+rtcEngine.startPreview(Constants.VideoSourceType.VIDEO_SOURCE_CAMERA_PRIMARY);
+```
+
+#### 4 开启/预览/关闭屏幕共享
+##### 4.1 开启屏幕共享
 ```java
 ScreenCaptureParameters parameters = new ScreenCaptureParameters();
 DisplayMetrics metrics = new DisplayMetrics();
@@ -70,21 +83,21 @@ parameters.audioCaptureParameters.captureSignalVolume = 50;
 rtcEngine.startScreenCapture(parameters);
 ```
 
-##### 3.2 预览屏幕共享
+##### 4.2 预览屏幕共享
 ```java
 rtcEngine.setupLocalVideo(new VideoCanvas(renderView, Constants.RENDER_MODE_FIT, Constants.VIDEO_MIRROR_MODE_DISABLED,
                     Constants.VIDEO_SOURCE_SCREEN_PRIMARY, uid));
            rtcEngine.startPreview(Constants.VideoSourceType.VIDEO_SOURCE_SCREEN_PRIMARY);
 ```
 
-##### 3.3 关闭屏幕共享
+##### 4.3 关闭屏幕共享
 ```java
 rtcEngine.stopScreenCapture();
 ```
 
 
-#### 4 加入Ex频道并推屏幕共享视频源，退出Ex频道
-##### 4.1 加入Ex频道并推屏幕共享视频
+#### 5 加入Ex频道并推屏幕共享视频源，退出Ex频道
+##### 5.1 加入Ex频道并推屏幕共享视频
 ```java
 ChannelMediaOptions options = new ChannelMediaOptions();
 options.clientRoleType = Constants.CLIENT_ROLE_BROADCASTER;
@@ -99,14 +112,27 @@ rtcEngine.joinChannelEx(getString(R.string.agora_rtc_token),
 			mScreenConnection, options, new IRtcEngineEventHandler() {});
 ```
 
-##### 4.2 退出Ex频道
+##### 5.2 退出Ex频道
 ```java
 if (mScreenConnection != null) {
     rtcEngine.leaveChannelEx(mScreenConnection);
     mScreenConnection = null;
 }
 ```
-#### 5 销毁 RtcEngine
+
+#### 6 本地视频开启/关闭控制
+```java
+mMainChannelOptions.publishCameraTrack = enableVideo;
+rtcEngine.updateChannelMediaOptions(mMainChannelOptions);
+```
+
+#### 7 本地音频开启/关闭控制
+```java
+mMainChannelOptions.publishMicrophoneTrack = enableAudio;
+rtcEngine.updateChannelMediaOptions(mMainChannelOptions);
+```
+
+#### 8 销毁 RtcEngine
 ```java
 RtcEngine.destroy();
 ```
